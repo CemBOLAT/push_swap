@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbolat <cbolat@student.42kocaeli.com.tr    +#+  +:+       +#+        */
+/*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 00:21:48 by cbolat            #+#    #+#             */
-/*   Updated: 2022/10/16 15:18:28 by cbolat           ###   ########.fr       */
+/*   Created: 2023/02/04 16:40:12 by cbolat            #+#    #+#             */
+/*   Updated: 2023/02/04 16:48:09 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_sort(t_list **stack_a, t_list **stack_b)
 {
-	while (lst)
-	{
-		f(lst->content);
-		lst = lst->next;
-	}
+	if (ft_lstsize(*stack_a) <= 5)
+		ft_small_sort(stack_a, stack_b);
+	else
+		ft_long_sort(stack_a, stack_b);
 }

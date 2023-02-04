@@ -3,31 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbolat <cbolat@student.42kocaeli.com.tr    +#+  +:+       +#+        */
+/*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 17:49:32 by cbolat            #+#    #+#             */
-/*   Updated: 2022/10/16 17:49:33 by cbolat           ###   ########.fr       */
+/*   Updated: 2023/02/04 14:35:52 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **list, t_list *new)
 {
 	t_list	*temp;
 
-	(temp) = malloc(sizeof(t_list));
-	if (!(temp))
-		return ;
-	temp = *lst;
 	if (!new)
 		return ;
-	if (!(*lst))
+	if (!*list)
 	{
-		*lst = new;
+		*list = new;
 		return ;
 	}
-	temp = ft_lstlast(*lst);
+	temp = ft_lstlast(*list);
 	temp->next = new;
-	return ;
 }

@@ -15,7 +15,7 @@ $(NAME) :
 
 $(LIBFT) :
 	@echo "\033[32mLIBFT COMPILING...\033[0m"
-	@make -C libft/
+	@make bonus -C libft/
 	@cp ./libft/libft.a .
 	@echo "\033[32mLIBFT COMPILED\033[0m"
 

@@ -6,11 +6,25 @@
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 14:48:02 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/03 18:43:30 by cbolat           ###   ########.fr       */
+/*   Updated: 2023/02/04 17:17:46 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	ft_is_sorted(t_list **stack)
+{
+	t_list *tmp;
+
+	tmp = *stack;
+	while (tmp && tmp->next)
+	{
+		if (tmp->content > tmp->next->content)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
+}
 
 int	ft_isnum(char *str)
 {
@@ -38,8 +52,7 @@ int	ft_isrepeat(char **tab, int len, int k)
 		i = 1;
 	else
 		i = 0;
-	while (ft_atoi(tab[len]) != ft_atoi(tab[i]) &&
-		i < len)
+	while (ft_atoi(tab[len]) != ft_atoi(tab[i]) && i < len)
 		i++;
 	if (i == len)
 		return (0);
@@ -63,7 +76,7 @@ void	ft_check_arg2(char **tab, int i, int k)
 	}
 }
 
-void	ft_check_arguments(int argc, char **argv)
+int	ft_check_arguments(int argc, char **argv)
 {
 	int		i;
 	char	**tab;
@@ -83,14 +96,6 @@ void	ft_check_arguments(int argc, char **argv)
 		tab = argv;
 	}
 	ft_check_arg2(tab, i, k);
-	if (k == 1)
-	{
-		while (tab[i])
-		{
-			free(tab[i]);
-			i++;
-		}
-		free(tab);
-	}
-
+	ft_free_split(tab, k);
+	return (k);
 }
