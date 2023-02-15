@@ -37,6 +37,7 @@ fclean: clean
 	@rm -rf $(NAME)
 	@rm -rf $(LIBFT_PATH)/$(LIBFT)
 	@rm -rf src/push_swap.a
+	@rm -rf *.a
 	@echo "\033[32mARCHIVE FILES WERE CLEANED\033[0m"
 
 re: clean fclean all

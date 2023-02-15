@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   process2.c                                         :+:      :+:    :+:   */
+/*   process_push.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/04 17:25:17 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/04 18:30:54 by cbolat           ###   ########.fr       */
+/*   Created: 2023/02/09 21:45:53 by cbolat            #+#    #+#             */
+/*   Updated: 2023/02/09 21:50:36 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,27 @@ int	ft_pa(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*temp_a;
 	t_list	*temp_b;
+	t_list	*temp;
 
 	if (ft_lstsize(*stack_b) < 1)
 		return (1);
 	temp_a = *stack_a;
 	temp_b = *stack_b;
-	*stack_b = temp_b->next;
-	temp_b->next = temp_a;
-	*stack_a = temp_b;
-	ft_shell_print("pa", 'p');
+	temp = temp_b;
+	temp_b = temp_b->next;
+	*stack_b = temp_b;
+	if (!temp_a)
+	{
+		temp_a = temp;
+		temp_a->next = NULL;
+		*stack_a = temp_a;
+	}
+	else
+	{
+		temp->next = temp_a;
+		*stack_a = temp;
+	}
+	ft_shell_print("pa\n", 'p');
 	return (0);
 }
 
@@ -32,15 +44,27 @@ int	ft_pb(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*temp_a;
 	t_list	*temp_b;
+	t_list	*temp;
 
 	if (ft_lstsize(*stack_a) < 1)
 		return (1);
 	temp_a = *stack_a;
 	temp_b = *stack_b;
-	*stack_a = temp_a->next;
-	temp_a->next = temp_b;
-	*stack_b = temp_a;
-	ft_shell_print("pb", 'p');
+	temp = temp_a;
+	temp_a = temp_a->next;
+	*stack_a = temp_a;
+	if (!temp_b)
+	{
+		temp_b = temp;
+		temp_b->next = NULL;
+		*stack_b = temp_b;
+	}
+	else
+	{
+		temp->next = temp_b;
+		*stack_b = temp;
+	}
+	ft_shell_print("pb\n", 'p');
 	return (0);
 }
 

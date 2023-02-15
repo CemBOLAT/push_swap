@@ -1,52 +1,61 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   process3.c                                         :+:      :+:    :+:   */
+/*   process_r_rotate.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/04 18:29:44 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/04 18:48:33 by cbolat           ###   ########.fr       */
+/*   Created: 2023/02/09 21:51:52 by cbolat            #+#    #+#             */
+/*   Updated: 2023/02/09 21:52:27 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_rotate(t_list **stack)
+int	ft_reverse(t_list **stack)
 {
 	t_list	*tmp;
 	t_list	*end;
 
-	if (ft_lstsize(*stack) < 2)
-		return (1);
 	tmp = *stack;
-	end = ft_lstlast(tmp);
-	*stack = tmp->next;
-	end->next = tmp;
-	tmp->next = NULL;
+	end = ft_lstlast(*stack);
+	while (tmp)
+	{
+		if (!(tmp->next->next))
+		{
+			tmp->next = NULL;
+			break;
+		}
+		tmp = tmp->next;
+	}
+	end->next = *stack;
+	*stack = end;
 	return (0);
 }
 
-int	ft_ra(t_list **stack_a)
+int	ft_rra(t_list **stack_a)
 {
-	if (ft_rotate(stack_a))
+	if (ft_lstsize(*stack_a) < 2)
 		return (1);
-	ft_shell_print("ra", 'p');
+	ft_reverse(stack_a);
+	ft_shell_print("rra\n", 'p');
 	return (0);
 }
 
-int	ft_rb(t_list **stack_b)
+int	ft_rrb(t_list **stack_b)
 {
-	if (ft_rotate(stack_b))
+	if (ft_lstsize(*stack_b) < 2)
 		return (1);
-	ft_shell_print("rb", 'p');
+	ft_reverse(stack_b);
+	ft_shell_print("rrb\n", 'p');
 	return (0);
 }
 
-int	ft_rr(t_list **stack_a, t_list **stack_b)
+int	ft_rrr(t_list **stack_a, t_list **stack_b)
 {
-	if (ft_rotate(stack_a) || ft_rotate(stack_b))
+	if (ft_lstsize(*stack_a) < 2 || ft_lstsize(*stack_b) < 2)
 		return (1);
-	ft_shell_print("rr", 'p');
+	ft_reverse(stack_b);
+	ft_shell_print("rrr\n", 'p');
 	return (0);
 }
