@@ -1,50 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit.c                                             :+:      :+:    :+:   */
+/*   ft_check_sorted.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 20:31:27 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/14 23:44:07 by cbolat           ###   ########.fr       */
+/*   Created: 2023/02/16 16:37:15 by cbolat            #+#    #+#             */
+/*   Updated: 2023/02/16 16:47:00 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_exit(char *str)
-{
-	write(1, "Error : ", 8);
-	ft_shell_print(str, 'e');
-	exit(0);
-}
-
-void	ft_exit_and_free(char *str, char **tab, int k)
-{
-	if (ft_free_split(tab, k) == 0)
-		ft_exit(str);
-	ft_exit(str);
-}
-
-int	ft_free_split(char **tab, int k)
+// This function checks if the stack is sorted.
+int	ft_checksorted(t_list *stack_a)
 {
 	int	i;
 
-	i = 0;
-	if (k == 0)
-		return (0);
-	while (tab[i])
+	i = stack_a->content;
+	while (stack_a)
 	{
-		free(tab[i]);
-		i++;
+		if (i > stack_a->content)
+			return (0);
+		i = stack_a->content;
+		stack_a = stack_a->next;
 	}
-	free(tab);
 	return (1);
 }
-
-void	ft_free_stacks(t_list **stack_a, t_list **stack_b)
-{
-	ft_lstclear(stack_a);
-	ft_lstclear(stack_b);
-}
-

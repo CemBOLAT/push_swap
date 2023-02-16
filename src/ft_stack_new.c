@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_list_new.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 16:36:31 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/16 16:51:25 by cbolat           ###   ########.fr       */
+/*   Created: 2023/02/16 16:39:21 by cbolat            #+#    #+#             */
+/*   Updated: 2023/02/16 16:39:23 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+// Creates new stack node with given number.
+t_list	*ft_list_new(int content)
 {
-	t_list	*a;
+	t_list	*new;
 
-	if (argc < 2)
+	new = malloc(sizeof (t_list));
+	if (!new)
 		ft_error();
-	ft_check_arguments(argc, argv);
-
-	a = ft_process(argc, argv);
-	if (!a || ft_checkdup(a))
-	{
-		ft_free(&a);
-		ft_error();
-	}
-
-
-
-
-
-	if (!ft_checksorted(a))
-		ft_sort(&a);
-	ft_free(&a);
-	return (0);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

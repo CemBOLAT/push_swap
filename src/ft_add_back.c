@@ -1,41 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sheel_print.c                                      :+:      :+:    :+:   */
+/*   ft_add_back.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 20:52:31 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/11 00:15:14 by cbolat           ###   ########.fr       */
+/*   Created: 2023/02/16 16:36:52 by cbolat            #+#    #+#             */
+/*   Updated: 2023/02/16 16:45:37 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_shell_print(char *str, char cond)
+// Function to add a new node to the stack from back side
+void	ft_add_back(t_list **stack, t_list *stack_new)
 {
-	int	i;
-
-	i = 0;
-	if (cond == 'e')
-	{
-		write(1, "\033[31m", 6);
-		while (str[i])
-			write(1, &str[i++], 1);
-		write(1, "\033[0m", 5);
-	}
-	else if (cond == 'p')
-	{
-		write(1, "\033[33m", 6);
-		while (str[i])
-			write(1, &str[i++], 1);
-		write(1, "\033[0m", 5);
-	}
-	else if (cond == 's')
-	{
-		write(1, "\033[32m", 6);
-		while (str[i])
-			write(1, &str[i++], 1);
-		write(1, "\033[0m", 5);
-	}
+	if (!stack)
+		return ;
+	if (!*stack)
+		*stack = stack_new;
+	else
+		(ft_lstlast(*stack))->next = stack_new;
 }
