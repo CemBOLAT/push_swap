@@ -6,7 +6,7 @@
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 16:24:21 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/04 16:01:30 by cbolat           ###   ########.fr       */
+/*   Updated: 2023/02/16 17:06:31 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <stdbool.h>
 
 typedef struct s_list
 {

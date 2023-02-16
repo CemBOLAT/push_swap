@@ -6,7 +6,7 @@
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 16:38:53 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/16 16:47:10 by cbolat           ###   ########.fr       */
+/*   Updated: 2023/02/16 17:51:14 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_sort_b_till_3(t_list **stack_a, t_list **stack_b)
 	int		i;
 	t_list	*tmp;
 
-	while (ft_lstsize(*stack_a) > 3 && !ft_checksorted(*stack_a))
+	while (ft_lstsize(*stack_a) > 3 && !ft_is_sorted(stack_a))
 	{
 		tmp = *stack_a;
 		i = ft_rotate_type_ab(*stack_a, *stack_b);
@@ -44,25 +44,21 @@ void	ft_sort_b_till_3(t_list **stack_a, t_list **stack_b)
 // the stack_b is sorted. When three elements are left,
 // it calls the ft_sort_three function to sort left over
 // elements in stack_a.
-t_list	*ft_sort_b(t_list **stack_a)
+void	ft_step1(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*stack_b;
-
-	stack_b = NULL;
-	if (ft_lstsize(*stack_a) > 3 && !ft_checksorted(*stack_a))
-		ft_pb(stack_a, &stack_b, 0);
-	if (ft_lstsize(*stack_a) > 3 && !ft_checksorted(*stack_a))
-		ft_pb(stack_a, &stack_b, 0);
-	if (ft_lstsize(*stack_a) > 3 && !ft_checksorted(*stack_a))
-		ft_sort_b_till_3(stack_a, &stack_b);
-	if (!ft_checksorted(*stack_a))
-		ft_sort_three(stack_a);
-	return (stack_b);
+	if (ft_lstsize(*stack_a) > 3 && !ft_is_sorted(stack_a))
+		ft_pb(stack_a, stack_b);
+	if (ft_lstsize(*stack_a) > 3 && !ft_is_sorted(stack_a))
+		ft_pb(stack_a, stack_b);
+	if (ft_lstsize(*stack_a) > 3 && !ft_is_sorted(stack_a))
+		ft_sort_b_till_3(stack_a, stack_b);
+	if (!ft_is_sorted(stack_a))
+		ft_sort3(stack_a);
 }
 
 // This function is pushing back the elements from stack_b
 // to stack_a until stack_b is empty.
-t_list	**ft_sort_a(t_list **stack_a, t_list **stack_b)
+void	ft_step2(t_list **stack_a, t_list **stack_b)
 {
 	int		i;
 	t_list	*tmp;
@@ -85,7 +81,6 @@ t_list	**ft_sort_a(t_list **stack_a, t_list **stack_b)
 				tmp = tmp->next;
 		}
 	}
-	return (stack_a);
 }
 
 // This function sorts the stack_a if there are more
@@ -96,28 +91,26 @@ t_list	**ft_sort_a(t_list **stack_a, t_list **stack_b)
 // sorted at the end, the minimum number have to
 // at the top of the stack_a. So, it simply brings
 // the smallest number of the stack_a to the top.
-void	ft_sort(t_list **stack_a)
+void	ft_sort(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*stack_b;
 	int		i;
 
-	stack_b = NULL;
 	if (ft_lstsize(*stack_a) == 2)
-		ft_sa(stack_a, 0);
+		ft_sa(stack_a);
 	else
 	{
-		stack_b = ft_sort_b(stack_a);
-		stack_a = ft_sort_a(stack_a, &stack_b);
-		i = ft_find_index(*stack_a, ft_min(*stack_a));
+		ft_step1(stack_a, stack_b);
+		ft_step2(stack_a, stack_b);
+		i = ft_find_index(*stack_a, ft_min(stack_a));
 		if (i < ft_lstsize(*stack_a) - i)
 		{
-			while ((*stack_a)->content != ft_min(*stack_a))
-				ft_ra(stack_a, 0);
+			while ((*stack_a)->content != ft_min(stack_a))
+				ft_ra(stack_a);
 		}
 		else
 		{
-			while ((*stack_a)->content != ft_min(*stack_a))
-				ft_rra(stack_a, 0);
+			while ((*stack_a)->content != ft_min(stack_a))
+				ft_rra(stack_a);
 		}
 	}
 }

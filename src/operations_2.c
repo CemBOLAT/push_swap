@@ -6,14 +6,14 @@
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 16:39:46 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/16 16:46:22 by cbolat           ###   ########.fr       */
+/*   Updated: 2023/02/16 17:05:15 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // rr : ra and rb at the same time
-void	ft_rr(t_list **a, t_list **b, int j)
+void	ft_rr(t_list **a, t_list **b)
 {
 	t_list	*tmp;
 
@@ -29,12 +29,11 @@ void	ft_rr(t_list **a, t_list **b, int j)
 	(*b)->next = tmp;
 	*b = tmp->next;
 	tmp->next = NULL;
-	if (j == 0)
-		write(1, "rr\n", 3);
+	write(1, "rr\n", 3);
 }
 
 // Second part of the rrr function
-void	ft_rrr_sub(t_list **b, int j)
+void	ft_rrr_sub(t_list **b)
 {
 	t_list	*tmp;
 	int		i;
@@ -53,12 +52,11 @@ void	ft_rrr_sub(t_list **b, int j)
 		i--;
 	}
 	tmp->next = NULL;
-	if (j == 0)
-		write(1, "rrr\n", 4);
+	write(1, "rrr\n", 4);
 }
 
 // rrr : rra and rrb at the same time.
-void	ft_rrr(t_list **a, t_list **b, int j)
+void	ft_rrr(t_list **a, t_list **b)
 {
 	t_list	*tmp;
 	int		i;
@@ -79,12 +77,12 @@ void	ft_rrr(t_list **a, t_list **b, int j)
 		i--;
 	}
 	tmp->next = NULL;
-	ft_rrr_sub(b, j);
+	ft_rrr_sub(b);
 }
 
 // pb (push b) : take the first element at the top of a and put it
 // at the top of b. Do nothing if a is empty.
-void	ft_pb(t_list **stack_a, t_list **stack_b, int j)
+void	ft_pb(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*tmp;
 
@@ -94,13 +92,12 @@ void	ft_pb(t_list **stack_a, t_list **stack_b, int j)
 	*stack_b = *stack_a;
 	*stack_a = (*stack_a)->next;
 	(*stack_b)->next = tmp;
-	if (j == 0)
-		write(1, "pb\n", 3);
+	write(1, "pb\n", 3);
 }
 
 // rrb (reverse rotate b) : shift down all elements of stack b by 1.
 // The last element becomes the first one.
-void	ft_rrb(t_list **b, int j)
+void	ft_rrb(t_list **b)
 {
 	t_list	*tmp;
 	int		i;
@@ -121,6 +118,5 @@ void	ft_rrb(t_list **b, int j)
 		i--;
 	}
 	tmp->next = NULL;
-	if (j == 0)
-		write(1, "rrb\n", 4);
+	write(1, "rrb\n", 4);
 }
