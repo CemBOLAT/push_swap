@@ -6,11 +6,11 @@
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:42:32 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/17 16:49:39 by cbolat           ###   ########.fr       */
+/*   Updated: 2023/02/17 17:14:57 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 int	ft_is_sorted(t_list **stack)
 {

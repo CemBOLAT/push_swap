@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 17:02:14 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/17 17:52:12 by cbolat           ###   ########.fr       */
+/*   Created: 2023/02/03 13:43:06 by cbolat            #+#    #+#             */
+/*   Updated: 2023/02/17 17:24:52 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef CHECKER_H
+# define CHECKER_H
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
-{
-	size_t	i;
+# include "../src/push_swap.h"
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 4
+# endif
 
-	i = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
-	{
-		if (s1[i] != s2[i])
-			return (0);
-		i++;
-	}
-	return (1);
-}
+char	*get_next_line(int fd);
+char	*ft_read_left_to_right(int fd, char *d_line);
+char	*ft_strnchr(char *s, int c);
+size_t	ft_str_len(char *s);
+char	*ft_strcat(char *d_line, char *buff);
+char	*ft_get_line(char *d_line);
+char	*ft_new_dinamic_line(char *d_line);
+#endif

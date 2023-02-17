@@ -1,27 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 17:02:14 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/17 17:52:12 by cbolat           ###   ########.fr       */
+/*   Created: 2023/02/16 12:30:34 by cbolat            #+#    #+#             */
+/*   Updated: 2023/02/16 12:30:34 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "checker.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_exit(char *str)
 {
-	size_t	i;
+	ft_putendl_fd(str, 1);
+	exit(0);
+}
+
+void	ft_exit_and_free(char *str, char **tab, int k)
+{
+	ft_free_split(tab, k);
+	ft_exit(str);
+}
+
+void	ft_free_split(char **tab, int k)
+{
+	int	i;
 
 	i = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
+	if (k == 0)
 	{
-		if (s1[i] != s2[i])
-			return (0);
-		i++;
+		while (tab[i])
+		{
+			free(tab[i]);
+			i++;
+		}
+		free(tab);
 	}
-	return (1);
+}
+
+void	ft_free_stacks(t_list **stack_a, t_list **stack_b)
+{
+	ft_lstclear(stack_a);
+	ft_lstclear(stack_b);
 }
