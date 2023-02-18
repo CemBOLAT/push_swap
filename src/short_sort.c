@@ -6,7 +6,7 @@
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 16:38:59 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/19 00:34:23 by cbolat           ###   ########.fr       */
+/*   Updated: 2023/02/19 00:51:10 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void	ft_sort5(t_list **stack_a, t_list **stack_b, int i)
 {
 	if ((*stack_a)->next->index == i)
-	{
 		ft_sa(stack_a);
-	}
 	else if ((*stack_a)->next->next->index == i)
 	{
 		ft_ra(stack_a);
