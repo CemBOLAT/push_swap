@@ -27,7 +27,6 @@ $(PS) :
 
 bonus : all
 	@echo "\033[32mChecker COMPILING... \033[0m"
-	@make -C libft/
 	@cp ./libft/libft.a .
 	@make -C checker_bonus/
 	@cp ./checker_bonus/checker.a .
