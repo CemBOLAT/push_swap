@@ -6,7 +6,7 @@
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 16:40:02 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/17 17:50:57 by cbolat           ###   ########.fr       */
+/*   Updated: 2023/02/19 00:16:54 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	ft_sa(t_list **a)
 	*a = (*a)->next;
 	tmp->next = (*a)->next;
 	(*a)->next = tmp;
-	ft_putendl_fd("sa", 1);
 }
 
 void	ft_sb(t_list **b)
@@ -35,7 +34,6 @@ void	ft_sb(t_list **b)
 	*b = (*b)->next;
 	tmp->next = (*b)->next;
 	(*b)->next = tmp;
-	ft_putendl_fd("sb", 1);
 }
 
 void	ft_ss(t_list **a, t_list **b)
@@ -52,5 +50,4 @@ void	ft_ss(t_list **a, t_list **b)
 	*b = (*b)->next;
 	tmp->next = (*b)->next;
 	(*b)->next = tmp;
-	ft_putendl_fd("ss", 1);
 }

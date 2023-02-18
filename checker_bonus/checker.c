@@ -6,7 +6,7 @@
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 17:10:00 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/17 17:47:23 by cbolat           ###   ########.fr       */
+/*   Updated: 2023/02/19 00:25:38 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,10 @@ void	ft_control(t_list **a, t_list **b, char *line)
 		line = ft_check(a, b, line);
 		free(tmp);
 	}
-	if(ft_lstsize(*b) != 0)
-		ft_putendl_fd("KOad", 1);
+	if (ft_lstsize(*b) != 0)
+		ft_putendl_fd("KO", 1);
 	else if (ft_is_sorted((a)) == 0)
-		ft_putendl_fd("KOd", 1);
+		ft_putendl_fd("KO", 1);
 	else
 		ft_putendl_fd("OK", 1);
 	free(line);
@@ -65,6 +65,7 @@ int	main(int argc, char **argv)
 	t_list	**a;
 	t_list	**b;
 	char	*line;
+
 	if (argc < 2)
 		ft_exit("Error");
 	ft_check_arguments(argc, argv);
@@ -79,18 +80,8 @@ int	main(int argc, char **argv)
 		ft_exit("Error");
 	}
 	line = get_next_line(0);
-	if (!line && !ft_is_sorted((a)))
-	{
-		ft_free_stacks(a, b);
-		ft_putendl_fd("KOda", 1);
-	}
-	else if (!line && ft_is_sorted((a)))
-	{
-		ft_free_stacks(a, b);
-		ft_putendl_fd("OK", 1);
-	}
-	else
-		ft_control(a, b, line);
+	ft_control(a, b, line);
 	ft_free_stacks(a, b);
 	return (0);
 }
+//bekle!

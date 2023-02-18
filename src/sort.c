@@ -6,7 +6,7 @@
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 16:38:53 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/17 16:43:11 by cbolat           ###   ########.fr       */
+/*   Updated: 2023/02/19 00:36:51 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,21 +76,21 @@ void	ft_step2(t_list **stack_a, t_list **stack_b)
 
 void	ft_long_sort(t_list **stack_a, t_list **stack_b)
 {
-		int		i;
+	int	i;
 
-		ft_step1(stack_a, stack_b);
-		ft_step2(stack_a, stack_b);
-		i = ft_find_index(*stack_a, ft_min(stack_a));
-		if (i < ft_lstsize(*stack_a) - i)
-		{
-			while ((*stack_a)->content != ft_min(stack_a))
-				ft_ra(stack_a);
-		}
-		else
-		{
-			while ((*stack_a)->content != ft_min(stack_a))
-				ft_rra(stack_a);
-		}
+	ft_step1(stack_a, stack_b);
+	ft_step2(stack_a, stack_b);
+	i = ft_find_index(*stack_a, ft_min(stack_a));
+	if (i < ft_lstsize(*stack_a) - i)
+	{
+		while ((*stack_a)->content != ft_min(stack_a))
+			ft_ra(stack_a);
+	}
+	else
+	{
+		while ((*stack_a)->content != ft_min(stack_a))
+			ft_rra(stack_a);
+	}
 }
 
 void	ft_sort(t_list **stack_a, t_list **stack_b)

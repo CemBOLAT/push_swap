@@ -6,7 +6,7 @@
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 20:56:25 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/16 17:49:04 by cbolat           ###   ########.fr       */
+/*   Updated: 2023/02/19 00:29:51 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_fill_index_3(t_list **stack_a, int *arr)
 {
 	int		i;
 	int		j;
-	t_list *temp;
+	t_list	*temp;
 
 	temp = *stack_a;
 	i = 0;
@@ -53,7 +53,7 @@ void	ft_fill_index_3(t_list **stack_a, int *arr)
 			if (arr[j] == temp->content)
 			{
 				temp->index = j;
-				break;
+				break ;
 			}
 			j++;
 		}
@@ -67,7 +67,7 @@ void	ft_fill_index_2(t_list **stack_a, int *arr)
 {
 	int	i;
 	int	j;
-	int temp;
+	int	temp;
 
 	i = 0;
 	while (i < ft_lstsize(*stack_a))

@@ -6,7 +6,7 @@
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 16:38:41 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/17 16:42:29 by cbolat           ###   ########.fr       */
+/*   Updated: 2023/02/19 00:37:06 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ int	ft_apply_rrarb(t_list **a, t_list **b, int c, char s)
 	}
 	return (-1);
 }
-
 
 int	ft_apply_rarrb(t_list **a, t_list **b, int c, char s)
 {
