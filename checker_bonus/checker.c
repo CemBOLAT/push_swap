@@ -6,7 +6,7 @@
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 17:10:00 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/19 00:25:38 by cbolat           ###   ########.fr       */
+/*   Updated: 2023/02/19 01:15:05 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	main(int argc, char **argv)
 	if (ft_is_sorted(a))
 	{
 		ft_free_stacks(a, b);
-		ft_exit("Error");
+		exit(0);
 	}
 	line = get_next_line(0);
 	ft_control(a, b, line);
