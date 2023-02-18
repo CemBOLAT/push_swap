@@ -32,7 +32,7 @@ bonus : all
 	@cp ./checker_bonus/checker.a .
 	@gcc $(CFLASGS) checker.a libft.a -o checker
 	@rm -rf *.a
-	@echo "\033[32m32mChecker COMPILED !\033[0m"
+	@echo "\033[32mChecker COMPILED !\033[0m"
 
 clean:
 	@echo "\033[32mCLEANING...\033[0m"
