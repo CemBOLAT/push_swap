@@ -6,11 +6,17 @@
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 17:10:00 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/19 01:15:05 by cbolat           ###   ########.fr       */
+/*   Updated: 2023/02/19 13:15:45 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+
+void	ft_error(t_list **a, t_list **b)
+{
+	ft_free_stacks(a, b);
+	ft_exit("Error");
+}
 
 char	*ft_check(t_list **a, t_list **b, char *line)
 {
@@ -37,7 +43,7 @@ char	*ft_check(t_list **a, t_list **b, char *line)
 	else if (ft_strncmp(line, "rrr\n", 4) && ft_strlen(line) == 4)
 		ft_rrr(a, b);
 	else
-		ft_exit("Error");
+		ft_error(a, b);
 	return (get_next_line(0));
 }
 
@@ -74,14 +80,14 @@ int	main(int argc, char **argv)
 	*a = NULL;
 	*b = NULL;
 	ft_fill_stack_a(a, argc, argv);
-	if (ft_is_sorted(a))
+	line = get_next_line(0);
+	if (ft_is_sorted(a) || !line)
 	{
 		ft_free_stacks(a, b);
+		free(line);
 		exit(0);
 	}
-	line = get_next_line(0);
 	ft_control(a, b, line);
 	ft_free_stacks(a, b);
 	return (0);
 }
-//bekle!

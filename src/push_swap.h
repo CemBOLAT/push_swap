@@ -6,7 +6,7 @@
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 13:43:06 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/17 16:09:18 by cbolat           ###   ########.fr       */
+/*   Updated: 2023/02/19 10:42:51 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,6 @@ void	ft_rrb(t_list **stack_b);
 void	ft_rrr(t_list **stack_a, t_list **stack_b);
 //---------------------processes end--------------------------
 //				---------short sorting---------
-void	ft_small_sort(t_list **stack_a);
-void	ft_sort2(t_list **stack_a);
 void	ft_sort3(t_list **stack_a);
 void	ft_sort4(t_list **stack_a, t_list **stack_b, int i);
 void	ft_sort5(t_list **stack_a, t_list **stack_b, int i);
@@ -65,7 +63,7 @@ void	ft_step2(t_list **stack_a, t_list **stack_b);
 int		ft_min(t_list **stack);
 int		ft_max(t_list **stack);
 int		ft_min_index(t_list **stack);
-void	ft_push_b_till_3(t_list **stack_a, t_list **stack_b);
+void	ft_push_b_till_5(t_list **stack_a, t_list **stack_b);
 int		ft_rotate_type_ab(t_list *a, t_list *b);
 int		ft_rotate_type_ba(t_list *a, t_list *b);
 int		ft_find_place_a(t_list *stack, int nbr_push);
