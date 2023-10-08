@@ -6,11 +6,12 @@
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:30:34 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/16 12:30:34 by cbolat           ###   ########.fr       */
+/*   Updated: 2023/10/09 01:12:23 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+#include <stdlib.h>
 
 void	ft_exit(char *str)
 {

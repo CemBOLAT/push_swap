@@ -6,11 +6,12 @@
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:30:34 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/16 12:30:34 by cbolat           ###   ########.fr       */
+/*   Updated: 2023/10/09 01:13:29 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdlib.h>
 
 void	ft_exit(char *str)
 {

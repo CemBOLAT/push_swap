@@ -6,11 +6,12 @@
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:47:14 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/17 17:24:59 by cbolat           ###   ########.fr       */
+/*   Updated: 2023/10/09 01:12:55 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+#include <stdlib.h>
 
 char	*ft_read_left_to_right(int fd, char *d_line)
 {

@@ -6,11 +6,12 @@
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 20:56:25 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/19 00:29:51 by cbolat           ###   ########.fr       */
+/*   Updated: 2023/10/09 01:10:55 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdlib.h>
 
 void	ft_fill_stack_a(t_list **list, int c, char **v)
 {

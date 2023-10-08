@@ -6,11 +6,12 @@
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 16:36:31 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/19 11:16:42 by cbolat           ###   ########.fr       */
+/*   Updated: 2023/10/09 01:11:01 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdlib.h>
 
 int	main(int argc, char **argv)
 {

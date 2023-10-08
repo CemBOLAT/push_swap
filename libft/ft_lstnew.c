@@ -6,11 +6,12 @@
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 14:41:25 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/04 15:59:58 by cbolat           ###   ########.fr       */
+/*   Updated: 2023/10/09 01:10:18 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 t_list	*ft_lstnew(int content)
 {

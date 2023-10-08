@@ -6,11 +6,12 @@
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 17:10:00 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/19 13:15:45 by cbolat           ###   ########.fr       */
+/*   Updated: 2023/10/09 01:12:14 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+#include <stdlib.h>
 
 void	ft_error(t_list **a, t_list **b)
 {

@@ -9,7 +9,7 @@ all : $(LIBFT) $(PS) $(NAME)
 
 $(NAME) :
 	@echo "\033[32mSOURCE IS COMPILING...\033[0m"
-	@gcc $(CFLASGS) $(LIBFT) $(PS) -o $(NAME)
+	@gcc $(CFLASGS) $(PS) $(LIBFT) -o $(NAME)
 	@rm -rf *.a
 	@echo "\033[32mCOMPILATION SUCCESS...\033[0m"
 

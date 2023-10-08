@@ -6,11 +6,12 @@
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 17:48:34 by cbolat            #+#    #+#             */
-/*   Updated: 2023/02/04 15:59:07 by cbolat           ###   ########.fr       */
+/*   Updated: 2023/10/09 01:11:18 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 void	ft_lstdelone(t_list *lst)
 {
