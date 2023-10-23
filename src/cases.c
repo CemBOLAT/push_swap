@@ -15,7 +15,8 @@
 int	ft_case_rarb(t_list *a, t_list *b, int c, int step)
 {
 	int	i;
-
+	
+	i = 0;
 	if (step == 1)
 	{
 		i = ft_find_place_b(b, c);
